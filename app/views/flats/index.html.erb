@@ -1,0 +1,11 @@
+<div class="container col-6 m-auto">
+  <ul>
+    <% @flats.each do |flat| %>
+      <li class="card m-3 p-3"><%= link_to flat.name, flat_path(flat) %> <%= link_to "Delete", flat_path(flat),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add a new flat", new_flat_path %>
+</div>
